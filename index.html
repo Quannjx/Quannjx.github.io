@@ -26,7 +26,7 @@
       --muted: #b9b1a6;
       --accent: #d2a679;
       --accent-soft: rgba(210, 166, 121, 0.2);
-      --shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 16px;
@@ -181,8 +181,8 @@
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
         rgba(10, 13, 16, 0.68);
-      border: 0;
-      box-shadow: none;
+      border: 1px solid transparent;
+      box-shadow: var(--shadow);
       isolation: isolate;
     }
 
@@ -338,7 +338,6 @@
 
     .content-card {
       padding: 24px;
-      border: 1px solid transparent;
     }
 
     .card-header {
