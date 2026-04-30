@@ -74,10 +74,8 @@
 
     body::after {
       background:
-        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.03) 45%, transparent 58%),
-        linear-gradient(transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%);
-      mix-blend-mode: screen;
-      opacity: 0.35;
+        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.022) 46%, transparent 58%);
+      opacity: 0.16;
     }
 
     a {
@@ -140,13 +138,12 @@
     .nav-links a {
       font-size: 0.92rem;
       color: var(--muted);
-      transition: color 0.3s ease, transform 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover,
     .nav-links a:focus-visible {
       color: var(--text);
-      transform: translateY(-1px);
     }
 
     main {
@@ -587,7 +584,7 @@
       min-height: 44px;
       padding: 0 16px;
       border-radius: 999px;
-      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .ghost-link {
@@ -606,7 +603,7 @@
     .solid-link:hover,
     .ghost-link:focus-visible,
     .solid-link:focus-visible {
-      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
     }
 
     .site-footer {
