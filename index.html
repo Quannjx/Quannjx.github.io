@@ -365,15 +365,23 @@
       font-size: 0.9rem;
     }
 
-    .spotify-frame {
-      width: 100%;
-      min-height: 352px;
-      border: 0;
+    .spotify-embed {
+      overflow: hidden;
       border-radius: 18px;
       background: rgba(255, 255, 255, 0.02);
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
-      clip-path: inset(0 round 18px);
+      isolation: isolate;
+      contain: paint;
+    }
+
+    .spotify-frame {
+      display: block;
+      width: 100%;
+      min-height: 352px;
+      border: 0;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
     }
 
     .spotify-grid {
@@ -897,13 +905,15 @@
                 </div>
                 <a class="ghost-link" href="${album.url}" target="_blank" rel="noreferrer">Open</a>
               </div>
-              <iframe
-                class="spotify-frame"
-                loading="lazy"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                title="${album.title}"
-                src="https://open.spotify.com/embed/album/${album.albumId}?utm_source=generator&theme=0"
-              ></iframe>
+              <div class="spotify-embed">
+                <iframe
+                  class="spotify-frame"
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  title="${album.title}"
+                  src="https://open.spotify.com/embed/album/${album.albumId}?utm_source=generator&theme=0"
+                ></iframe>
+              </div>
             </article>
           `
         )
