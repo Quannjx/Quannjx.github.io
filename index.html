@@ -244,8 +244,6 @@
       background: var(--panel);
       border: 1px solid var(--line);
       backdrop-filter: blur(12px);
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
     }
 
     .meta-card {
@@ -369,8 +367,6 @@
       overflow: hidden;
       border-radius: 18px;
       background: rgba(255, 255, 255, 0.02);
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
       isolation: isolate;
       contain: paint;
     }
@@ -380,8 +376,6 @@
       width: 100%;
       min-height: 352px;
       border: 0;
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
     }
 
     .spotify-grid {
@@ -395,8 +389,6 @@
       border-radius: var(--radius-lg);
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.07);
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
     }
 
     .spotify-meta {
@@ -551,6 +543,15 @@
     }
 
     @media (hover: hover) {
+      .repo-card,
+      .score-card,
+      .spotify-card,
+      .spotify-embed,
+      .spotify-frame {
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+      }
+
       .repo-card,
       .score-card {
         will-change: transform;
