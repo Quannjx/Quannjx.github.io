@@ -363,12 +363,19 @@
       font-size: 0.9rem;
     }
 
+    .spotify-embed {
+      overflow: hidden;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.02);
+      isolation: isolate;
+      contain: paint;
+    }
+
     .spotify-frame {
+      display: block;
       width: 100%;
       min-height: 352px;
       border: 0;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.02);
     }
 
     .spotify-grid {
@@ -458,7 +465,7 @@
 
     .repo-card:hover,
     .repo-card:focus-within {
-      transform: translateY(-4px);
+      transform: translate3d(0, -4px, 0);
       border-color: rgba(210, 166, 121, 0.22);
       background: rgba(255, 255, 255, 0.055);
     }
@@ -535,9 +542,25 @@
       transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
     }
 
+    @media (hover: hover) {
+      .repo-card,
+      .score-card,
+      .spotify-card,
+      .spotify-embed,
+      .spotify-frame {
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+      }
+
+      .repo-card,
+      .score-card {
+        will-change: transform;
+      }
+    }
+
     .score-card:hover,
     .score-card.active {
-      transform: translateY(-2px);
+      transform: translate3d(0, -2px, 0);
       border-color: rgba(210, 166, 121, 0.28);
       background: rgba(255, 255, 255, 0.06);
     }
@@ -888,13 +911,15 @@
                 </div>
                 <a class="ghost-link" href="${album.url}" target="_blank" rel="noreferrer">Open</a>
               </div>
-              <iframe
-                class="spotify-frame"
-                loading="lazy"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                title="${album.title}"
-                src="https://open.spotify.com/embed/album/${album.albumId}?utm_source=generator&theme=0"
-              ></iframe>
+              <div class="spotify-embed">
+                <iframe
+                  class="spotify-frame"
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  title="${album.title}"
+                  src="https://open.spotify.com/embed/album/${album.albumId}?utm_source=generator&theme=0"
+                ></iframe>
+              </div>
             </article>
           `
         )
