@@ -366,11 +366,15 @@
     }
 
     .spotify-frame {
+      display: block;
       width: 100%;
       min-height: 352px;
       border: 0;
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.02);
+      background: #111;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      clip-path: inset(0 round 18px);
     }
 
     .spotify-grid {
@@ -380,10 +384,14 @@
     }
 
     .spotify-card {
+      position: relative;
+      overflow: hidden;
       padding: 18px;
       border-radius: var(--radius-lg);
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.07);
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
     }
 
     .spotify-meta {
