@@ -74,10 +74,8 @@
 
     body::after {
       background:
-        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.03) 45%, transparent 58%),
-        linear-gradient(transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%);
-      mix-blend-mode: screen;
-      opacity: 0.35;
+        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.022) 46%, transparent 58%);
+      opacity: 0.16;
     }
 
     a {
@@ -140,38 +138,32 @@
     .nav-links a {
       font-size: 0.92rem;
       color: var(--muted);
-      transition: color 0.3s ease, transform 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     .nav-links a:hover,
     .nav-links a:focus-visible {
       color: var(--text);
-      transform: translateY(-1px);
     }
 
     main {
-      padding: 32px 0 96px;
+      padding: 20px 0 96px;
     }
 
     section {
       margin-top: 28px;
     }
 
-    section:first-of-type {
-      margin-top: 0;
-    }
-
     .hero + .section-grid {
-      margin-top: 4px;
+      margin-top: 24px;
     }
 
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: auto;
       display: grid;
       align-items: start;
-      padding: 12px 0 24px;
+      padding: 12px 0 6px;
     }
 
     .hero-panel {
@@ -460,14 +452,14 @@
     .repo-card {
       min-height: 220px;
       padding: 20px;
-      transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+      transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
     }
 
     .repo-card:hover,
     .repo-card:focus-within {
-      transform: translate3d(0, -4px, 0);
       border-color: rgba(210, 166, 121, 0.22);
       background: rgba(255, 255, 255, 0.055);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
     }
 
     .repo-top {
@@ -539,30 +531,14 @@
       cursor: pointer;
       appearance: none;
       -webkit-appearance: none;
-      transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
-    }
-
-    @media (hover: hover) {
-      .repo-card,
-      .score-card,
-      .spotify-card,
-      .spotify-embed,
-      .spotify-frame {
-        transform: translate3d(0, 0, 0);
-        backface-visibility: hidden;
-      }
-
-      .repo-card,
-      .score-card {
-        will-change: transform;
-      }
+      transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
     }
 
     .score-card:hover,
     .score-card.active {
-      transform: translate3d(0, -2px, 0);
       border-color: rgba(210, 166, 121, 0.28);
       background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
     }
 
     .score-title {
@@ -611,7 +587,7 @@
       min-height: 44px;
       padding: 0 16px;
       border-radius: 999px;
-      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .ghost-link {
@@ -630,7 +606,7 @@
     .solid-link:hover,
     .ghost-link:focus-visible,
     .solid-link:focus-visible {
-      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
     }
 
     .site-footer {
