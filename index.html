@@ -452,14 +452,14 @@
     .repo-card {
       min-height: 220px;
       padding: 20px;
-      transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+      transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
     }
 
     .repo-card:hover,
     .repo-card:focus-within {
-      transform: translate3d(0, -4px, 0);
       border-color: rgba(210, 166, 121, 0.22);
       background: rgba(255, 255, 255, 0.055);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
     }
 
     .repo-top {
@@ -531,30 +531,14 @@
       cursor: pointer;
       appearance: none;
       -webkit-appearance: none;
-      transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
-    }
-
-    @media (hover: hover) {
-      .repo-card,
-      .score-card,
-      .spotify-card,
-      .spotify-embed,
-      .spotify-frame {
-        transform: translate3d(0, 0, 0);
-        backface-visibility: hidden;
-      }
-
-      .repo-card,
-      .score-card {
-        will-change: transform;
-      }
+      transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
     }
 
     .score-card:hover,
     .score-card.active {
-      transform: translate3d(0, -2px, 0);
       border-color: rgba(210, 166, 121, 0.28);
       background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
     }
 
     .score-title {
