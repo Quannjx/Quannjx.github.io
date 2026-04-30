@@ -244,6 +244,8 @@
       background: var(--panel);
       border: 1px solid var(--line);
       backdrop-filter: blur(12px);
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
     }
 
     .meta-card {
@@ -454,11 +456,12 @@
       min-height: 220px;
       padding: 20px;
       transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+      will-change: transform;
     }
 
     .repo-card:hover,
     .repo-card:focus-within {
-      transform: translateY(-4px);
+      transform: translate3d(0, -4px, 0);
       border-color: rgba(210, 166, 121, 0.22);
       background: rgba(255, 255, 255, 0.055);
     }
@@ -533,11 +536,12 @@
       appearance: none;
       -webkit-appearance: none;
       transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+      will-change: transform;
     }
 
     .score-card:hover,
     .score-card.active {
-      transform: translateY(-2px);
+      transform: translate3d(0, -2px, 0);
       border-color: rgba(210, 166, 121, 0.28);
       background: rgba(255, 255, 255, 0.06);
     }
