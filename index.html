@@ -26,7 +26,7 @@
       --muted: #b9b1a6;
       --accent: #d2a679;
       --accent-soft: rgba(210, 166, 121, 0.2);
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
       --radius-xl: 28px;
       --radius-lg: 22px;
       --radius-md: 16px;
@@ -157,13 +157,17 @@
       margin-top: 28px;
     }
 
+    section:first-of-type {
+      margin-top: 0;
+    }
+
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: calc(100vh - 112px);
+      min-height: auto;
       display: grid;
-      align-items: end;
-      padding: 48px 0 24px;
+      align-items: start;
+      padding: 12px 0 24px;
     }
 
     .hero-panel {
