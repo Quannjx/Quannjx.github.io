@@ -787,6 +787,8 @@
           <div class="card-header">
             <h3>Repositories</h3>
           </div>
+          <!-- 添加缺失的状态显示元素，用于展示加载提示或错误信息 -->
+          <span id="repo-status" class="status-chip" style="margin-left: auto;"></span>
         </div>
         <div id="repo-grid" class="repo-grid" aria-live="polite"></div>
       </div>
@@ -871,7 +873,7 @@
       elements.profileName.textContent = siteConfig.profile.name;
       elements.profileFocus.textContent = siteConfig.profile.focus;
       elements.heroDescription.textContent = siteConfig.profile.statement;
-      elements.footerCredit.textContent = siteConfig.profile.footer;
+      elements.footerCredit.textContent = siteConfig.profile.footer || "Personal archive of independent works.";
       elements.contactLink.textContent = siteConfig.profile.contactLabel;
       elements.contactLink.href = siteConfig.profile.contactUrl;
     }
@@ -982,8 +984,9 @@
         }
 
         elements.repoGrid.innerHTML = publicRepos.map(renderRepoCard).join("");
+        elements.repoStatus.textContent = "Repositories loaded";
       } catch (error) {
-        elements.repoStatus.textContent = "Repository fetch failed";
+        elements.repoStatus.textContent = "Repository fetch failed – showing fallback";
         renderRepoFallback();
         console.error(error);
       }
